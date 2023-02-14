@@ -1,0 +1,1 @@
+# bash-devutils-container-images-keeper
