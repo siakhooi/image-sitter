@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# shellcheck source=/dev/null
+source /usr/lib/image-sitter/image-sitter-config
+
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $(basename "$0") group" >&2
+    exit 0
+fi
+
+GROUP=$1
+
+if [[ -d "$IMAGE_SITTER_HOME/$GROUP" ]] ; then
+    echo "Error: The directory $IMAGE_SITTER_HOME/$GROUP already exists." >&2
+    exit 1
+fi
+
+mkdir -v -p "$IMAGE_SITTER_HOME/$GROUP"
+mkdir -v -p "$IMAGE_SITTER_HOME/$GROUP/$DIRECTORY_PULL_ALWAYS"
+mkdir -v -p "$IMAGE_SITTER_HOME/$GROUP/$DIRECTORY_PULL_IF_NOT_EXISTS"
+mkdir -v -p "$IMAGE_SITTER_HOME/$GROUP/$DIRECTORY_DELETE_IF_EXISTS"
+
+SAMPLE_FILENAME=sample.images.txt
+
+echo "Create sample: $IMAGE_SITTER_HOME/$GROUP/$DIRECTORY_PULL_ALWAYS/$SAMPLE_FILENAME"
+cat >"$IMAGE_SITTER_HOME/$GROUP/$DIRECTORY_PULL_ALWAYS/$SAMPLE_FILENAME" <<___EOF___
+alpine:latest
+___EOF___
+
+echo "Create sample: $IMAGE_SITTER_HOME/$GROUP/$DIRECTORY_PULL_IF_NOT_EXISTS/$SAMPLE_FILENAME"
+cat >"$IMAGE_SITTER_HOME/$GROUP/$DIRECTORY_PULL_IF_NOT_EXISTS/$SAMPLE_FILENAME" <<___EOF___
+alpine:3.17
+alpine:3.16.4
+alpine:3.16
+alpine:3.15.7
+___EOF___
+
+echo "Create sample: $IMAGE_SITTER_HOME/$GROUP/$DIRECTORY_DELETE_IF_EXISTS/$SAMPLE_FILENAME"
+cat >"$IMAGE_SITTER_HOME/$GROUP/$DIRECTORY_DELETE_IF_EXISTS/$SAMPLE_FILENAME" <<___EOF___
+alpine:3.15.7
+alpine:3.15
+___EOF___

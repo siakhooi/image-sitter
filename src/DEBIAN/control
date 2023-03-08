@@ -1,0 +1,7 @@
+Package: siakhooi-image-sitter
+Version: 1.0.0
+Maintainer: Siak Hooi <siakhooi@gmail.com>
+Depends: bash, coreutils, findutils, grep, siakhooi-devutils-echo-colors
+Architecture: amd64
+Homepage: <https://github.com/siakhooi/image-sitter>
+Description: Programs to take care of your container images.
