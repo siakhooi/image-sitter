@@ -1,11 +1,11 @@
 # Image Sitter
 
-Programs to take care of your container images. It help you ensure you have a up to date local cache of the docker images that you frequently used.
+Programs to take care of your container images. It helps to ensure you have an up to date local cache of the docker images that are frequently used.
 
 ## Introduction
 
-You maintain the docker url in several files, categorize into groups, and also 3 predefined subgroup, which is 'pull-always', 'pull-if-not-exists', and 'delete-if-exists'.
-`image-sitter` program will do the necessary pull or delete when it is triggered.
+By maintaining the docker url in several files, categorize into groups, and 3 predefined subgroups, which are 'pull-always', 'pull-if-not-exists', and 'delete-if-exists'.
+`image-sitter` programs will do the necessary pull or delete when they are triggered.
 
 ## Commands
 
