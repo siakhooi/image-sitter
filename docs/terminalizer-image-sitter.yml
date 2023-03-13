@@ -1,0 +1,391 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/sing
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 100
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 45
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: null
+    title: null
+    style:
+      border: '16px #0C0C0C solid'
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Cascadia Mono"
+  
+  # The size of the font
+  fontSize: 16
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "#0C0C0C"
+    foreground: "#CCCCCC"
+    cursor: "#FFFFFF"
+    black: "#0C0C0C"
+    red: "#C50F1F"
+    green: "#13A10E"
+    yellow: "#C19C00"
+    blue: "#0037DA"
+    magenta: "#881798"
+    cyan: "#3A96DD"
+    white: "#CCCCCC"
+    brightBlack: "#767676"
+    brightRed: "#E74856"
+    brightGreen: "#16C60C"
+    brightYellow: "#F9F1A5"
+    brightBlue: "#3B78FF"
+    brightMagenta: "#B4009E"
+    brightCyan: "#61D6D6"
+    brightWhite: "#F2F2F2"
+  
+# Records, feel free to edit them
+records:
+  - delay: 10
+    content: "\r$ "
+  - delay: 100
+    content: i
+  - delay: 100
+    content: m
+  - delay: 100
+    content: a
+  - delay: 100
+    content: g
+  - delay: 100
+    content: e
+  - delay: 100
+    content: '-'
+  - delay: 100
+    content: s
+  - delay: 100
+    content: i
+  - delay: 100
+    content: t
+  - delay: 100
+    content: t
+  - delay: 100
+    content: e
+  - delay: 100
+    content: r
+  - delay: 100
+    content: '-'
+  - delay: 100
+    content: i
+  - delay: 100
+    content: 'n'
+  - delay: 100
+    content: i
+  - delay: 100
+    content: t
+  - delay: 100
+    content: ' '
+  - delay: 100
+    content: q
+  - delay: 100
+    content: u
+  - delay: 100
+    content: i
+  - delay: 100
+    content: c
+  - delay: 100
+    content: k
+  - delay: 100
+    content: '-'
+  - delay: 100
+    content: s
+  - delay: 100
+    content: t
+  - delay: 100
+    content: a
+  - delay: 100
+    content: r
+  - delay: 100
+    content: t
+  - delay: 100
+    content: '-'
+  - delay: 100
+    content: '1'
+  - delay: 100
+    content: "\r\n\e[?2004l\r"
+  - delay: 40
+    content: "mkdir: created directory '/home/sing/.image-sitter/quick-start-1'\r\n"
+  - delay: 10
+    content: "mkdir: created directory '/home/sing/.image-sitter/quick-start-1/pull-always'\r\n"
+  - delay: 10
+    content: "mkdir: created directory '/home/sing/.image-sitter/quick-start-1/pull-if-not-exists'\r\n"
+  - delay: 10
+    content: "mkdir: created directory '/home/sing/.image-sitter/quick-start-1/delete-if-exists'\r\nCreate sample: /home/sing/.image-sitter/quick-start-1/pull-always/sample.images.txt\r\n"
+  - delay: 10
+    content: "Create sample: /home/sing/.image-sitter/quick-start-1/pull-if-not-exists/sample.images.txt\r\n"
+  - delay: 9
+    content: "Create sample: /home/sing/.image-sitter/quick-start-1/delete-if-exists/sample.images.txt\r\n"
+  - delay: 90
+    content: "$ "
+  - delay: 100
+    content: i
+  - delay: 100
+    content: m
+  - delay: 100
+    content: a
+  - delay: 100
+    content: g
+  - delay: 100
+    content: e
+  - delay: 100
+    content: '-'
+  - delay: 100
+    content: s
+  - delay: 100
+    content: i
+  - delay: 100
+    content: t
+  - delay: 100
+    content: t
+  - delay: 100
+    content: e
+  - delay: 100
+    content: r
+  - delay: 100
+    content: ' '
+  - delay: 100
+    content: q
+  - delay: 100
+    content: u
+  - delay: 100
+    content: i
+  - delay: 100
+    content: c
+  - delay: 100
+    content: k
+  - delay: 100
+    content: '-'
+  - delay: 100
+    content: s
+  - delay: 100
+    content: t
+  - delay: 100
+    content: a
+  - delay: 100
+    content: r
+  - delay: 100
+    content: t
+  - delay: 100
+    content: '-'
+  - delay: 100
+    content: '1'
+  - delay: 100
+    content: "\r\n\e[?2004l\r"
+  - delay: 40
+    content: "\e[1;35m[Delete If Exists]\r\n\e[0m"
+  - delay: 30
+    content: "\e[1;34m[quick-start-1]\r\n\e[0m"
+  - delay: 1871
+    content: "\e[1;33mNot Found: alpine:3.15\r\n\e[0m"
+  - delay: 1829
+    content: "\e[1;33mNot Found: alpine:3.15.7\r\n\e[0m"
+  - delay: 11
+    content: "\e[1;35m[Pull If Not Exists]\r\n\e[0m"
+  - delay: 20
+    content: "\e[1;34m[quick-start-1]\r\n\e[0m"
+  - delay: 2180
+    content: "\e[1;32mdocker pull alpine:3.15.7\r\n\e[0m"
+  - delay: 6199
+    content: "3.15.7: Pulling from library/alpine\r\n"
+  - delay: 1021
+    content: "\r\n\e[1A\e[2K\r895e193edb51: Pulling fs layer \r\e[1B"
+  - delay: 2459
+    content: "\e[1A\e[2K\r895e193edb51: Downloading [>                                                  ]  28.75kB/2.826MB\r\e[1B"
+  - delay: 100
+    content: "\e[1A\e[2K\r895e193edb51: Downloading [==================>                                ]  1.031MB/2.826MB\r\e[1B"
+  - delay: 119
+    content: "\e[1A\e[2K\r895e193edb51: Downloading [========================================>          ]  2.308MB/2.826MB\r\e[1B"
+  - delay: 20
+    content: "\e[1A\e[2K\r895e193edb51: Downloading [==================================================>]  2.826MB/2.826MB\r\e[1B\e[1A\e[2K\r895e193edb51: Verifying Checksum \r\e[1B\e[1A\e[2K\r895e193edb51: Download complete \r\e[1B"
+  - delay: 9
+    content: "\e[1A\e[2K\r895e193edb51: Extracting [>                                                  ]  32.77kB/2.826MB\r\e[1B"
+  - delay: 1131
+    content: "\e[1A\e[2K\r895e193edb51: Extracting [======>                                            ]  360.4kB/2.826MB\r\e[1B"
+  - delay: 119
+    content: "\e[1A\e[2K\r895e193edb51: Extracting [=============>                                     ]  786.4kB/2.826MB\r\e[1B"
+  - delay: 100
+    content: "\e[1A\e[2K\r895e193edb51: Extracting [=================>                                 ]    983kB/2.826MB\r\e[1B"
+  - delay: 101
+    content: "\e[1A\e[2K\r895e193edb51: Extracting [===================================>               ]  2.032MB/2.826MB\r\e[1B"
+  - delay: 109
+    content: "\e[1A\e[2K\r895e193edb51: Extracting [=================================================> ]  2.818MB/2.826MB\r\e[1B"
+  - delay: 50
+    content: "\e[1A\e[2K\r895e193edb51: Extracting [==================================================>]  2.826MB/2.826MB\r\e[1B"
+  - delay: 430
+    content: "\e[1A\e[2K\r895e193edb51: Pull complete \r\e[1B"
+  - delay: 120
+    content: "Digest: sha256:689659b1f08e9fdfb85190144098c378beb5a53b328f7ced7883a74a1157c709\r\n"
+  - delay: 40
+    content: "Status: Downloaded newer image for alpine:3.15.7\r\n"
+  - delay: 20
+    content: "docker.io/library/alpine:3.15.7\r\n"
+  - delay: 2020
+    content: "\e[1;32mdocker pull alpine:3.16\r\n\e[0m"
+  - delay: 5970
+    content: "3.16: Pulling from library/alpine\r\n"
+  - delay: 1000
+    content: "\r\n\e[1A\e[2K\ref5531b6e74e: Pulling fs layer \r\e[1B"
+  - delay: 901
+    content: "\e[1A\e[2K\ref5531b6e74e: Downloading [>                                                  ]  28.14kB/2.808MB\r\e[1B"
+  - delay: 100
+    content: "\e[1A\e[2K\ref5531b6e74e: Downloading [============>                                      ]  675.1kB/2.808MB\r\e[1B"
+  - delay: 89
+    content: "\e[1A\e[2K\ref5531b6e74e: Verifying Checksum \r\e[1B\e[1A\e[2K\ref5531b6e74e: Download complete \r\e[1B\e[1A\e[2K\ref5531b6e74e: Extracting [>                                                  ]  32.77kB/2.808MB\r\e[1B"
+  - delay: 370
+    content: "\e[1A\e[2K\ref5531b6e74e: "
+  - delay: 10
+    content: "Extracting [======>                                            ]  360.4kB/2.808MB\r\e[1B"
+  - delay: 111
+    content: "\e[1A\e[2K\ref5531b6e74e: Extracting [==============>                                    ]  786.4kB/2.808MB\r\e[1B"
+  - delay: 99
+    content: "\e[1A\e[2K\ref5531b6e74e: Extracting [=====================>                             ]  1.212MB/2.808MB\r\e[1B"
+  - delay: 100
+    content: "\e[1A\e[2K\ref5531b6e74e: Extracting [==================================>                ]  1.933MB/2.808MB\r\e[1B"
+  - delay: 120
+    content: "\e[1A\e[2K\ref5531b6e74e: Extracting [==============================================>    ]  2.589MB/2.808MB\r\e[1B"
+  - delay: 40
+    content: "\e[1A\e[2K\ref5531b6e74e: Extracting [==================================================>]  2.808MB/2.808MB\r\e[1B"
+  - delay: 390
+    content: "\e[1A\e[2K\ref5531b6e74e: Pull complete \r\e[1B"
+  - delay: 120
+    content: "Digest: sha256:1bd67c81e4ad4b8f4a5c1c914d7985336f130e5cefb3e323654fd09d6bcdbbe2\r\n"
+  - delay: 41
+    content: "Status: Downloaded newer image for alpine:3.16\r\n"
+  - delay: 19
+    content: "docker.io/library/alpine:3.16\r\n"
+  - delay: 2710
+    content: "\e[1;32mdocker pull alpine:3.16.4\r\n\e[0m"
+  - delay: 6940
+    content: "3.16.4: Pulling from library/alpine\r\n"
+  - delay: 170
+    content: "Digest: sha256:1bd67c81e4ad4b8f4a5c1c914d7985336f130e5cefb3e323654fd09d6bcdbbe2\r\n"
+  - delay: 30
+    content: "Status: Downloaded newer image for alpine:3.16.4\r\n"
+  - delay: 30
+    content: "docker.io/library/alpine:3.16.4\r\n"
+  - delay: 2380
+    content: "\e[1;32mdocker pull alpine:3.17\r\n\e[0m"
+  - delay: 5940
+    content: "3.17: Pulling from library/alpine\r\n"
+  - delay: 951
+    content: "\r\n\e[1A\e[2K\r63b65145d645: Pulling fs layer \r\e[1B"
+  - delay: 919
+    content: "\e[1A\e[2K\r63b65145d645: Downloading [>                                                  ]  34.14kB/3.374MB\r\e[1B"
+  - delay: 100
+    content: "\e[1A\e[2K\r63b65145d645: Downloading [===============>                                   ]  1.036MB/3.374MB\r\e[1B"
+  - delay: 100
+    content: "\e[1A\e[2K\r63b65145d645: Downloading [================================================>  ]  3.271MB/3.374MB\r\e[1B\e[1A\e[2K\r63b65145d645: Verifying Checksum \r\e[1B\e[1A\e[2K\r63b65145d645: Download complete \r\e[1B"
+  - delay: 20
+    content: "\e[1A\e[2K\r63b65145d645: Extracting [>                                                  ]  65.54kB/3.374MB\r\e[1B"
+  - delay: 361
+    content: "\e[1A\e[2K\r63b65145d645: Extracting [=====>                                             ]  393.2kB/3.374MB\r\e[1B"
+  - delay: 209
+    content: "\e[1A\e[2K\r63b65145d645: Extracting [============>                                      ]    852kB/3.374MB\r\e[1B"
+  - delay: 110
+    content: "\e[1A\e[2K\r63b65145d645: Extracting [======================>                            ]  1.507MB/3.374MB\r\e[1B"
+  - delay: 101
+    content: "\e[1A\e[2K\r63b65145d645: Extracting [=================================>                 ]  2.228MB/3.374MB\r\e[1B"
+  - delay: 119
+    content: "\e[1A\e[2K\r63b65145d645: Extracting [===========================================>       ]  2.949MB/3.374MB\r\e[1B"
+  - delay: 101
+    content: "\e[1A\e[2K\r63b65145d645: Extracting [==================================================>]  3.374MB/3.374MB\r\e[1B"
+  - delay: 420
+    content: "\e[1A\e[2K\r63b65145d645: Pull complete \r\e[1B"
+  - delay: 189
+    content: "Digest: sha256:69665d02cb32192e52e07644d76bc6f25abeb5410edc1c7a81a10ba3f0efb90a\r\n"
+  - delay: 60
+    content: "Status: Downloaded newer image for alpine:3.17\r\n"
+  - delay: 40
+    content: "docker.io/library/alpine:3.17\r\n"
+  - delay: 20
+    content: "\e[1;35m[Pull Always]\r\n\e[0m"
+  - delay: 40
+    content: "\e[1;34m[quick-start-1]\r\n\e[0m"
+  - delay: 61
+    content: "\e[1;32mdocker pull alpine:latest\r\n\e[0m"
+  - delay: 5060
+    content: "latest: Pulling from library/alpine\r\n"
+  - delay: 119
+    content: "Digest: sha256:69665d02cb32192e52e07644d76bc6f25abeb5410edc1c7a81a10ba3f0efb90a\r\n"
+  - delay: 21
+    content: "Status: Downloaded newer image for alpine:latest\r\n"
+  - delay: 29
+    content: "docker.io/library/alpine:latest\r\n"
+  - delay: 150
+    content: "$ "
+  - delay: 3000
+    content: "\r\n"

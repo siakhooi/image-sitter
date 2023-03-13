@@ -17,6 +17,10 @@ image-sitter-pull-if-not-exists group [group ...]
 image-sitter-delete-if-exists group [group ...]
 ```
 
+## Sample
+
+![sample](sample.gif "Sample")
+
 ## Quick Start
 
 ### Installation

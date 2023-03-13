@@ -15,3 +15,5 @@ install:
 	sudo apt install -f ./siakhooi-image-sitter_1.0.0_amd64.deb
 uninstall:
 	sudo apt remove -y siakhooi-image-sitter
+terminalizer:
+	terminalizer render docs/terminalizer-image-sitter.yml
