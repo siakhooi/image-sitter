@@ -11,9 +11,9 @@ image-sitter - Run all 3 image-sitter commands on the list of groups given.
 # DESCRIPTION
 For each *group* given, run the following image-sitter commands:
 
-image-sitter-pull-always *group*\
+image-sitter-delete-if-exists *group*\
 image-sitter-pull-if-not-exists *group*\
-image-sitter-delete-if-exists *group*
+image-sitter-pull-always *group*
 
 # ENVIRONMENT VARIABLES
 IMAGE_SITTER_HOME
