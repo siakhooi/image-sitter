@@ -29,7 +29,7 @@ pandoc $SOURCE/md/image-sitter-pull-always.1.md -s -t man | gzip -9 >$TARGET/usr
 pandoc $SOURCE/md/image-sitter-pull-if-not-exists.1.md -s -t man | gzip -9 >$TARGET/usr/share/man/man1/image-sitter-pull-if-not-exists.1.gz
 pandoc $SOURCE/md/image-sitter-delete-if-exists.1.md -s -t man | gzip -9 >$TARGET/usr/share/man/man1/image-sitter-delete-if-exists.1.gz
 
-dpkg --build $TARGET
+dpkg-deb --build -Zxz $TARGET
 dpkg-name ${TARGET}.deb
 
 DEBFILE=$(ls ./*.deb)

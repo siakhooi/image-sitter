@@ -5,6 +5,10 @@ build:
 	./build.sh
 
 test-man:
+	pandoc src/md/image-sitter-delete-if-exists.1.md -s -t man | man -l -
+	pandoc src/md/image-sitter-init.1.md -s -t man | man -l -
+	pandoc src/md/image-sitter-pull-always.1.md -s -t man | man -l -
+	pandoc src/md/image-sitter-pull-if-not-exists.1.md -s -t man | man -l -
 	pandoc src/md/image-sitter.1.md -s -t man | man -l -
 
 delete-tags:
@@ -17,3 +21,11 @@ uninstall:
 	sudo apt remove -y siakhooi-image-sitter
 terminalizer:
 	terminalizer render docs/terminalizer-image-sitter.yml
+
+docker-ubuntu-bash:
+	docker run --rm -it -w /working -v $$(pwd):/working ubuntu bash
+#	. in-container-init.sh
+
+docker-debian-bash:
+	docker run --rm -it -w /working -v $$(pwd):/working debian bash
+#	. in-container-init.sh
