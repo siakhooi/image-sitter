@@ -1,4 +1,4 @@
-% IMAGE-SITTER-DELETE-IF-EXISTS(1) Siak Hooi Development Utilities 1.0.0|Image-Sitter
+% IMAGE-SITTER-DELETE-IF-EXISTS(1) |Image-Sitter Commands
 % Siak Hooi
 % March 2023
 

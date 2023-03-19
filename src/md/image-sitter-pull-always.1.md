@@ -1,4 +1,4 @@
-% IMAGE-SITTER-PULL-ALWAYS(1) Siak Hooi Development Utilities 1.0.0|Image-Sitter
+% IMAGE-SITTER-PULL-ALWAYS(1) | Image-Sitter Commands
 % Siak Hooi
 % March 2023
 
