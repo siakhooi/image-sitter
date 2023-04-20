@@ -17,7 +17,7 @@ delete-tags:
 
 reinstall:
 	apt remove -y siakhooi-image-sitter
-	apt install -f ./siakhooi-image-sitter_1.0.0_amd64.deb
+	apt install -f ./siakhooi-image-sitter_1.1.0_amd64.deb
 
 terminalizer:
 	terminalizer render docs/terminalizer-image-sitter.yml

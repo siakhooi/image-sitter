@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cat  << ___EOF___
+_image_sitter_completion()
+{
+    local cur choices
+    COMPREPLY=()
+    cur="\${COMP_WORDS[COMP_CWORD]}"
+    choices=\$( ls "\$HOME/.image-sitter/" 2>/dev/null )
+    mapfile -t COMPREPLY < <(compgen -W "\${choices}" -- "\${cur}")
+}
+
+complete -F _image_sitter_completion image-sitter
+complete -F _image_sitter_completion image-sitter-pull-if-not-exists
+complete -F _image_sitter_completion image-sitter-delete-if-exists
+complete -F _image_sitter_completion image-sitter-pull-always
+___EOF___

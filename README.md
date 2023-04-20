@@ -36,6 +36,12 @@ $ sudo apt update
 $ sudo apt install siakhooi-image-sitter
 ```
 
+- To setup bash completion, add the following code in `~/.bashrc` file.
+
+```bash
+source <(image-sitter-completion)
+```
+
 ### Using Image Sitter
 
 ```bash
