@@ -1,3 +1,5 @@
 target
 *.deb
 tmp
+*.deb.sha256sum
+*.deb.sha512sum

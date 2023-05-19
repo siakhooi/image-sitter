@@ -1,5 +1,5 @@
 clean:
-	rm -rf target *.deb
+	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum
 
 build:
 	./build.sh
