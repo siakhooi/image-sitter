@@ -2,8 +2,8 @@
 set -e
 
 PATH_TO_FILE=$(ls ./*.deb)
-DEBIAN_PACKAGE_SOURCE_PATH=$(realpath $PATH_TO_FILE)
-DEBIAN_PACKAGE_FILE=$(basename $PATH_TO_FILE)
+DEBIAN_PACKAGE_SOURCE_PATH=$(realpath "$PATH_TO_FILE")
+DEBIAN_PACKAGE_FILE=$(basename "$PATH_TO_FILE")
 
 TMPDIR=$(mktemp -d)
 
@@ -25,8 +25,8 @@ TARGET_COMMIT_MESSAGE="image-sitter: Auto deploy [$(date)]"
   git remote set-url origin "$TARGETURL"
   git restore --staged .
   mkdir -p $TARGETPATH
-  cp -v $DEBIAN_PACKAGE_SOURCE_PATH $TARGETPATH/$DEBIAN_PACKAGE_FILE
-  git add $TARGETPATH/$DEBIAN_PACKAGE_FILE
+  cp -v "$DEBIAN_PACKAGE_SOURCE_PATH" "$TARGETPATH/$DEBIAN_PACKAGE_FILE"
+  git add "$TARGETPATH/$DEBIAN_PACKAGE_FILE"
   git status
   git commit -m "$TARGET_COMMIT_MESSAGE"
   git push
