@@ -19,11 +19,6 @@ for group in "$@"; do
     echo.blue "[$group]"
     find "$DIR" -type f | sort | while read -r fileName; do
 
-        # uniq & sort contents
-        TMP_FILE=$(mktemp)
-        sort <"$fileName" | uniq | grep -v -e '^---$' | grep -v -e '^[[:space:]]*$' >"$TMP_FILE"
-        cat "$TMP_FILE" >"$fileName"
-
         while read -r docker_url; do
             echo.green "$IMAGE_SITTER_CLI pull $docker_url"
             $IMAGE_SITTER_CLI pull "$docker_url"
