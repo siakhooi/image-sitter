@@ -7,6 +7,12 @@ Programs to take care of your container images. It helps to ensure you have an u
 By maintaining the docker url in several files, categorize into groups, and 3 predefined subgroups, which are 'pull-always', 'pull-if-not-exists', and 'delete-if-exists'.
 `image-sitter` programs will do the necessary pull or delete when they are triggered.
 
+## Format of files
+
+- Each line of a file is a docker url, such as: nginx:latest.
+- lines started with # will be ignored.
+- blank lines will also be ignored.
+
 ## Commands
 
 ```bash
