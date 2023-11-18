@@ -20,6 +20,9 @@ for group in "$@"; do
     find "$DIR" -type f | sort | while read -r fileName; do
 
         while read -r docker_url; do
+            [[ $docker_url =~ ^[[:space:]]*#.* ]] && continue
+            [[ $docker_url =~ ^[[:space:]]*$ ]] && continue
+
             echo.green "$IMAGE_SITTER_CLI pull $docker_url"
             $IMAGE_SITTER_CLI pull "$docker_url"
         done <"$fileName"

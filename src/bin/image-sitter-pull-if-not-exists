@@ -20,6 +20,9 @@ for group in "$@"; do
     find "$DIR" -type f | sort | while read -r fileName; do
 
         while read -r docker_url; do
+            [[ $docker_url =~ ^[[:space:]]*#.* ]] && continue
+            [[ $docker_url =~ ^[[:space:]]*$ ]] && continue
+
             TAG1=$($IMAGE_SITTER_CLI images -q "$docker_url" 2>/dev/null)
 
             if [[ "$TAG1" == "" ]]; then
