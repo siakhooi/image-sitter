@@ -4,15 +4,15 @@
 source /usr/lib/image-sitter/image-sitter-config
 
 if [[ $# -ne 1 ]]; then
-    echo "Usage: $(basename "$0") group" >&2
-    exit 0
+  echo "Usage: $(basename "$0") group" >&2
+  exit 0
 fi
 
 GROUP=$1
 
-if [[ -d "$IMAGE_SITTER_HOME/$GROUP" ]] ; then
-    echo "Error: The directory $IMAGE_SITTER_HOME/$GROUP already exists." >&2
-    exit 1
+if [[ -d "$IMAGE_SITTER_HOME/$GROUP" ]]; then
+  echo "Error: The directory $IMAGE_SITTER_HOME/$GROUP already exists." >&2
+  exit 1
 fi
 
 mkdir -v -p "$IMAGE_SITTER_HOME/$GROUP"

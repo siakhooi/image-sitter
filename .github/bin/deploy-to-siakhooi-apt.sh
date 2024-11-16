@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 PATH_TO_FILE=$(ls ./*.deb)
@@ -7,16 +7,16 @@ DEBIAN_PACKAGE_FILE=$(basename "$PATH_TO_FILE")
 
 TMPDIR=$(mktemp -d)
 
-TARGETPATH=docs/pool/main/binary-amd64
-TARGETURL=https://${PUBLISH_TO_APT_GITHUB_TOKEN}@github.com/siakhooi/apt.git
-TARGETBRANCH=main
-TARGETDIR=apt
-TARGET_GIT_EMAIL=image-sitter@siakhooi.github.io
-TARGET_GIT_USERNAME=image-sitter
+readonly TARGETPATH=docs/pool/main/binary-amd64
+readonly TARGETURL=https://${PUBLISH_TO_APT_GITHUB_TOKEN}@github.com/siakhooi/apt.git
+readonly TARGETBRANCH=main
+readonly TARGETDIR=apt
+readonly TARGET_GIT_EMAIL=image-sitter@siakhooi.github.io
+readonly TARGET_GIT_USERNAME=image-sitter
 TARGET_COMMIT_MESSAGE="image-sitter: Auto deploy [$(date)]"
 
 (
-  cd $TMPDIR
+  cd "$TMPDIR"
   git config --global user.email "$TARGET_GIT_EMAIL"
   git config --global user.name "$TARGET_GIT_USERNAME"
 

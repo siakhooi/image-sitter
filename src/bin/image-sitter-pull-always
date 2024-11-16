@@ -4,28 +4,28 @@
 source /usr/lib/image-sitter/image-sitter-config
 
 if [[ $# -eq 0 ]]; then
-    echo "Usage: $(basename "$0") group [group ...]" >&2
-    exit 0
+  echo "Usage: $(basename "$0") group [group ...]" >&2
+  exit 0
 fi
 
 if ! command -v "$IMAGE_SITTER_CLI" &>/dev/null; then
-    echo "$IMAGE_SITTER_CLI could not be found"
-    exit 1
+  echo "$IMAGE_SITTER_CLI could not be found" >&2
+  exit 1
 fi
 for group in "$@"; do
-    DIR=$IMAGE_SITTER_HOME/$group/$DIRECTORY_PULL_ALWAYS
-    [[ -d $DIR ]] || continue
+  DIR=$IMAGE_SITTER_HOME/$group/$DIRECTORY_PULL_ALWAYS
+  [[ -d $DIR ]] || continue
 
-    echo.blue "[$group]"
-    find "$DIR" -type f | sort | while read -r fileName; do
+  echo.blue "[$group]"
+  find "$DIR" -type f | sort | while read -r fileName; do
 
-        while read -r docker_url; do
-            [[ $docker_url =~ ^[[:space:]]*#.* ]] && continue
-            [[ $docker_url =~ ^[[:space:]]*$ ]] && continue
+    while read -r docker_url; do
+      [[ $docker_url =~ ^[[:space:]]*#.* ]] && continue
+      [[ $docker_url =~ ^[[:space:]]*$ ]] && continue
 
-            echo.green "$IMAGE_SITTER_CLI pull $docker_url"
-            $IMAGE_SITTER_CLI pull "$docker_url"
-        done <"$fileName"
+      echo.green "$IMAGE_SITTER_CLI pull $docker_url"
+      $IMAGE_SITTER_CLI pull "$docker_url"
+    done <"$fileName"
 
-    done
+  done
 done

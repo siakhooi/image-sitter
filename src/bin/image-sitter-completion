@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat  << ___EOF___
+cat <<___EOF___
 _image_sitter_completion()
 {
     local cur choices

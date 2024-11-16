@@ -4,35 +4,35 @@
 source /usr/lib/image-sitter/image-sitter-config
 
 if [[ $# -eq 0 ]]; then
-    echo "Usage: $(basename "$0") group [group ...]" >&2
-    exit 0
+  echo "Usage: $(basename "$0") group [group ...]" >&2
+  exit 0
 fi
 
 if ! command -v "$IMAGE_SITTER_CLI" &>/dev/null; then
-    echo "$IMAGE_SITTER_CLI could not be found"
-    exit 1
+  echo "$IMAGE_SITTER_CLI could not be found" >&2
+  exit 1
 fi
 for group in "$@"; do
-    DIR=$IMAGE_SITTER_HOME/$group/$DIRECTORY_DELETE_IF_EXISTS
-    [[ -d $DIR ]] || continue
+  DIR=$IMAGE_SITTER_HOME/$group/$DIRECTORY_DELETE_IF_EXISTS
+  [[ -d $DIR ]] || continue
 
-    echo.blue "[$group]"
-    find "$DIR" -type f | sort | while read -r fileName; do
+  echo.blue "[$group]"
+  find "$DIR" -type f | sort | while read -r fileName; do
 
-        while read -r docker_url; do
-            [[ $docker_url =~ ^[[:space:]]*#.* ]] && continue
-            [[ $docker_url =~ ^[[:space:]]*$ ]] && continue
+    while read -r docker_url; do
+      [[ $docker_url =~ ^[[:space:]]*#.* ]] && continue
+      [[ $docker_url =~ ^[[:space:]]*$ ]] && continue
 
-            TAG1=$($IMAGE_SITTER_CLI images -q "$docker_url" 2>/dev/null)
+      TAG1=$($IMAGE_SITTER_CLI images -q "$docker_url" 2>/dev/null)
 
-            if [[ "$TAG1" == "" ]]; then
-                echo.yellow "Not Found: $docker_url"
+      if [[ "$TAG1" == "" ]]; then
+        echo.yellow "Not Found: $docker_url"
 
-            else
-                echo.green "$IMAGE_SITTER_CLI rmi $docker_url"
-                $IMAGE_SITTER_CLI rmi "$docker_url"
-            fi
-        done <"$fileName"
+      else
+        echo.green "$IMAGE_SITTER_CLI rmi $docker_url"
+        $IMAGE_SITTER_CLI rmi "$docker_url"
+      fi
+    done <"$fileName"
 
-    done
+  done
 done
