@@ -2,7 +2,13 @@ clean:
 	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum
 
 build:
-	./build.sh
+	./scripts/build.sh
+set-version:
+	scripts/set-version.sh
+git-commit-and-push:
+	scripts/git-commit-and-push.sh
+create-release:
+	scripts/create-release.sh
 
 test-man:
 	pandoc src/md/image-sitter-delete-if-exists.1.md -s -t man | man -l -
