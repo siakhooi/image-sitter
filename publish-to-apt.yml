@@ -1,0 +1,10 @@
+repo: siakhooi/apt
+branch: main
+git_commit_user: image-sitter
+git_commit_email: image-sitter@siakhooi.github.io
+git_commit_message: "image-sitter: Auto deploy"
+
+files:
+  - source: siakhooi-image-sitter_*_amd64.deb
+    target: docs/pool/main/binary-amd64/
+    items: 1
