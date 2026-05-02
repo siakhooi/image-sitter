@@ -5,8 +5,6 @@ build:
 	./scripts/build.sh
 set-version:
 	scripts/set-version.sh
-git-commit-and-push:
-	scripts/git-commit-and-push.sh
 create-release:
 	scripts/create-release.sh
 
@@ -26,3 +24,5 @@ terminalizer:
 
 init-docker:
 #	. in-container-init.sh
+docker-build-deb:
+	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:deb2604 scripts/build-deb.sh
