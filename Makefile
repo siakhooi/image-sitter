@@ -22,7 +22,5 @@ reinstall:
 terminalizer:
 	terminalizer render docs/terminalizer-image-sitter.yml
 
-init-docker:
-#	. in-container-init.sh
 docker-build-deb:
 	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:deb2604 scripts/build-deb.sh
