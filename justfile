@@ -1,8 +1,13 @@
+default:
+	@just --list
 clean:
 	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum
 
+all: clean shellcheck build
 build:
-	./scripts/build.sh
+	./scripts/build-deb.sh
+shellcheck:
+	./scripts/shellcheck.sh
 set-version:
 	scripts/set-version.sh
 create-release:
@@ -22,7 +27,6 @@ reinstall:
 terminalizer:
 	terminalizer render docs/terminalizer-image-sitter.yml
 
-init-docker:
-#	. in-container-init.sh
+root := justfile_directory()
 docker-build-deb:
-	docker run --rm -v $(CURDIR):/workspaces docker.io/siakhooi/devcontainer:deb2604 scripts/build-deb.sh
+	docker run --rm -v {{ root }}:/workspaces docker.io/siakhooi/devcontainer:deb2604 scripts/build-deb.sh
