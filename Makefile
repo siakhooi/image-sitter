@@ -1,8 +1,11 @@
 clean:
 	rm -rf target *.deb *.deb.sha256sum *.deb.sha512sum
 
+all: clean shellcheck build
 build:
-	./scripts/build.sh
+	./scripts/build-deb.sh
+shellcheck:
+	./scripts/shellcheck.sh
 set-version:
 	scripts/set-version.sh
 create-release:
